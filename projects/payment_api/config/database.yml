@@ -1,0 +1,21 @@
+default: &default
+  adapter: <%= Rails.application.config.app.databases.default.adapter %>
+  encoding: <%= Rails.application.config.app.databases.default.encoding %>
+  pool: <%= Rails.application.config.app.databases.default.pool %>
+  username: <%= Rails.application.config.app.databases.default.username %>
+  password: <%= Rails.application.config.app.databases.default.password %>
+  host: <%= Rails.application.config.app.databases.default.host %>
+  port: <%= Rails.application.config.app.databases.default.port %>
+  database: <%= Rails.application.config.app.databases.default.database %>
+
+development:
+  <<: *default
+
+pipeline:
+  <<: *default
+
+gitlab:
+  <<: *default
+
+production:
+  <<: *default
